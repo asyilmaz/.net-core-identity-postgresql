@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Api", "NetCore\NetCore.Api.csproj", "{4CA0C9ED-B539-488F-B74C-109247EF45C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Api", "NetCorePostgre.Api\NetCorePostgre.Api.csproj", "{4CA0C9ED-B539-488F-B74C-109247EF45C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Api.Model", "NetCore.Api.Model\NetCore.Api.Model.csproj", "{38F00183-A713-4139-B0A4-4FFB0B162CA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Api.Model", "NetCorePostgre.Api.Model\NetCorePostgre.Api.Model.csproj", "{38F00183-A713-4139-B0A4-4FFB0B162CA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Domain", "NetCore.Domain\NetCore.Domain.csproj", "{BA1D4F2D-C518-4F6C-BFF7-90842893AC4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Domain", "NetCorePostgre.Domain\NetCorePostgre.Domain.csproj", "{BA1D4F2D-C518-4F6C-BFF7-90842893AC4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Infrastructure", "NetCore.Infrastructure\NetCore.Infrastructure.csproj", "{C754E68E-70BC-4119-9047-2554CC0154A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Infrastructure", "NetCorePostgre.Infrastructure\NetCorePostgre.Infrastructure.csproj", "{C754E68E-70BC-4119-9047-2554CC0154A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

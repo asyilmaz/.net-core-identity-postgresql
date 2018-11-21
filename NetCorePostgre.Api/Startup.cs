@@ -12,10 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using NetCore.Domain.Identity;
-using NetCore.Infrastructure;
+using NetCorePostgre.Domain.Identity;
+using NetCorePostgre.Infrastructure;
 
-namespace NetCore.Api
+namespace NetCorePostgre.Api
 {
     public class Startup
     {
@@ -28,8 +28,8 @@ namespace NetCore.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MsSqlDbContext>();
-            services.AddIdentity<User, Role>().AddEntityFrameworkStores<MsSqlDbContext>().AddDefaultTokenProviders();
+            services.AddEntityFrameworkNpgsql().AddDbContext<PostgreSqlDbContext>();
+            services.AddIdentity<User, Role>().AddEntityFrameworkStores<PostgreSqlDbContext>().AddDefaultTokenProviders();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using NetCore.Domain.Identity;
+using NetCorePostgre.Domain.Identity;
 
-namespace NetCore.Infrastructure
+namespace NetCorePostgre.Infrastructure
 {
-    public class MsSqlDbContext : IdentityDbContext<User, Role, long, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
+    public class PostgreSqlDbContext : IdentityDbContext<User, Role, long, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
     {
         private IConfiguration Configuration { get; }
-        public MsSqlDbContext(DbContextOptions<MsSqlDbContext> options, IConfiguration configuration) : base(options)
+        public PostgreSqlDbContext(DbContextOptions<PostgreSqlDbContext> options, IConfiguration configuration) : base(options)
         {
             Configuration = configuration;
         }
@@ -27,7 +27,9 @@ namespace NetCore.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection"));
+            optionsBuilder.UseNpgsql(Configuration.GetConnectionString("PostgreSqlConnection"),
+                options => options.UseNodaTime()
+                );
         }
 
         public DbSet<User> User { get; set; }

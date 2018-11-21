@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NetCore.Api.Model.User
+namespace NetCorePostgre.Api.Model.User
 {
     public class UserRegisterRequest
     {

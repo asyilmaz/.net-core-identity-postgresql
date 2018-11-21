@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NetCore.Api.Model.User;
+using NetCorePostgre.Api.Model.User;
 
-namespace NetCore.Api.Controllers
+namespace NetCorePostgre.Api.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
