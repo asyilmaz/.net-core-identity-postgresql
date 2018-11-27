@@ -11,10 +11,12 @@ namespace NetCorePostgre.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+
         [HttpGet]
         public string Test()
         {
             return "Your api works. Good job!";
+
         }
 
         [HttpPost]
