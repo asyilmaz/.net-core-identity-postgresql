@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetCorePostgre.Application.Model\NetCorePostgre.Application.Model.csproj" />
     <ProjectReference Include="..\NetCorePostgre.Domain\NetCorePostgre.Domain.csproj" />
-    <ProjectReference Include="..\NetCorePostgre.Infrastructure\NetCorePostgre.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

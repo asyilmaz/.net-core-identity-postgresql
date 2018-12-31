@@ -5,17 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using NetCorePostgre.Domain.Identity;
-using NetCorePostgre.Infrastructure;
 
-namespace NetCorePostgre.Api
+namespace NetCorePostgre.Application.Api
 {
     public class Startup
     {
@@ -28,8 +24,9 @@ namespace NetCorePostgre.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddEntityFrameworkNpgsql().AddDbContext<PostgreSqlDbContext>();
-            services.AddIdentity<User, Role>().AddEntityFrameworkStores<PostgreSqlDbContext>().AddDefaultTokenProviders();
+            services.ConfigureDatabase();
+            services.ConfigureIdentity();
+            services.ConfigureBusinessClasses();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -43,6 +40,7 @@ namespace NetCorePostgre.Api
             {
                 app.UseHsts();
             }
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseMvc();

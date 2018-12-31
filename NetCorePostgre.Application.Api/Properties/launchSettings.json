@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "NetCorePostgre.Api": {
+    "NetCorePostgre.Application.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "user/test",

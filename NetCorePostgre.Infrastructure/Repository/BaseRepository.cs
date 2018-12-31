@@ -1,4 +1,4 @@
-﻿using NetCorePostgre.Infrastructure.Entity;
+﻿using NetCorePostgre.Domain.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +13,14 @@ namespace NetCorePostgre.Infrastructure.Repository
         {
             _dbContext = dbContext;
         }
-        public T FindById(int id)
+        public T GetById(long id)
         {
-            return _dbContext.Set<T>().Find(id);
+            return _dbContext.Set<T>().Where(x => x.IsDeleted == false && x.Id == id).FirstOrDefault();
         }
 
         public virtual ICollection<T> FindAll()
         {
-            return _dbContext.Set<T>().OrderBy(e => e.Id).ToList();
+            return _dbContext.Set<T>().Where(x => x.IsDeleted == false).OrderBy(e => e.Id).ToList();
         }
 
         public IQueryable<TResult> Select<TResult>(Expression<Func<T, TResult>> func)
@@ -50,9 +50,9 @@ namespace NetCorePostgre.Infrastructure.Repository
             return entity;
         }
 
-        public T RemoveById(int entityId)
+        public T RemoveById(long entityId)
         {
-             var entity = FindById(entityId);
+             var entity = GetById(entityId);
             entity.IsDeleted = true;
             _dbContext.Update(entity);
             _dbContext.SaveChanges();

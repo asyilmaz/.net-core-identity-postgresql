@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NetCorePostgre.Domain.Repository
+namespace NetCorePostgre.Application.Service.User
 {
-    class UserRepository
+    public interface IUserService
     {
     }
 }

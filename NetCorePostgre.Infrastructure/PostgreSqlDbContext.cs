@@ -33,12 +33,12 @@ namespace NetCorePostgre.Infrastructure
         }
 
         public DbSet<User> User { get; set; }
-        public DbSet<User> Role { get; set; }
-        public DbSet<User> RoleClaim { get; set; }
-        public DbSet<User> UserRole { get; set; }
-        public DbSet<User> UserClaim { get; set; }
-        public DbSet<User> UserLogin { get; set; }
-        public DbSet<User> UserToken { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<RoleClaim> RoleClaim { get; set; }
+        public DbSet<UserRole> UserRole { get; set; }
+        public DbSet<UserClaim> UserClaim { get; set; }
+        public DbSet<UserLogin> UserLogin { get; set; }
+        public DbSet<UserToken> UserToken { get; set; }
 
     }
 }
