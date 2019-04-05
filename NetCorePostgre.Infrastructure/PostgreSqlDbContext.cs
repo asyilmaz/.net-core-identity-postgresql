@@ -27,9 +27,7 @@ namespace NetCorePostgre.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(Configuration.GetConnectionString("PostgreSqlConnection"),
-                options => options.UseNodaTime()
-                );
+            optionsBuilder.UseNpgsql(Configuration.GetConnectionString("PostgreSqlConnection"));
         }
 
         public DbSet<User> User { get; set; }

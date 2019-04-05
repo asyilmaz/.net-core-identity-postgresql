@@ -4,9 +4,9 @@ using System.Text;
 
 namespace NetCorePostgre.Application.Model
 {
-    public class Error
+    public class UserLoginRequest
     {
-        public string Code { get; set; }
-        public string Message { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

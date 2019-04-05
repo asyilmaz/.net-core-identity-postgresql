@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NetCorePostgre.Application.Business;
+using NetCorePostgre.Application.Service;
 using NetCorePostgre.Application.Model;
 
 namespace NetCorePostgre.Application.Api.Controllers
@@ -13,11 +13,11 @@ namespace NetCorePostgre.Application.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserBusiness _userBusiness;
+        private readonly UserService _userService;
 
-        public UserController(UserBusiness userBusiness)
+        public UserController(UserService userService)
         {
-            _userBusiness = userBusiness;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -27,12 +27,29 @@ namespace NetCorePostgre.Application.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody] UserRegisterRequest model)
+        public async Task<JsonResult> Register([FromBody] UserRegisterRequest model)
         {
-            if (model == null) return BadRequest();
-            _userBusiness.CreateUser(model);
+            if (ModelState.IsValid)
+            {
+                var response = await _userService.CreateUser(model);
+                return new JsonResult(response);
+            }
+            else { return new JsonResult(BadRequest()); }
 
-            return null;
+
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> Login([FromBody] UserLoginRequest model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = await _userService.Login(model);
+                return new JsonResult(response);
+            }
+            else { return new JsonResult(BadRequest()); }
+
+
         }
     }
 }

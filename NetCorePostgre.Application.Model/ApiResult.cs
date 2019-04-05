@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NetCorePostgre.Application.Model
 {
-    public class ApiResult
+    public class Result
     {
-        public bool IsSucceeded { get; set; }
+        public bool Succeeded { get; set; }
         public object Data { get; set; }
-        public Error Error { get; set; }
+        public List<Error> Errors { get; set; } = new List<Error>();
     }
 }

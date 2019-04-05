@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Domain.Repository", "NetCorePostgre.Domain.Repository\NetCorePostgre.Domain.Repository.csproj", "{4E47CDCC-DC3E-4DEC-8E65-123ECCC95D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePostgre.Test", "NetCorePostgre.Test\NetCorePostgre.Test.csproj", "{FFA7872E-732C-46FD-A424-58EB394F62F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Test", "NetCorePostgre.Test\NetCorePostgre.Test.csproj", "{FFA7872E-732C-46FD-A424-58EB394F62F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePostgre.Application.Business", "NetCorePostgre.Application.Business\NetCorePostgre.Application.Business.csproj", "{F2423A58-3A34-46AF-B1F1-0A87F6DC8B7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Application.Service", "NetCorePostgre.Application.Service\NetCorePostgre.Application.Service.csproj", "{F2423A58-3A34-46AF-B1F1-0A87F6DC8B7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePostgre.Application.Model", "NetCorePostgre.Application.Model\NetCorePostgre.Application.Model.csproj", "{525A708C-25E6-49F7-9580-6A517E6EECC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCorePostgre.Application.Model", "NetCorePostgre.Application.Model\NetCorePostgre.Application.Model.csproj", "{525A708C-25E6-49F7-9580-6A517E6EECC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetCorePostgre.Application.Business\NetCorePostgre.Application.Business.csproj" />
     <ProjectReference Include="..\NetCorePostgre.Application.Model\NetCorePostgre.Application.Model.csproj" />
+    <ProjectReference Include="..\NetCorePostgre.Application.Service\NetCorePostgre.Application.Service.csproj" />
     <ProjectReference Include="..\NetCorePostgre.Domain\NetCorePostgre.Domain.csproj" />
     <ProjectReference Include="..\NetCorePostgre.Infrastructure\NetCorePostgre.Infrastructure.csproj" />
   </ItemGroup>

@@ -26,7 +26,7 @@ namespace NetCorePostgre.Application.Api
         {
             services.ConfigureDatabase();
             services.ConfigureIdentity();
-            services.ConfigureBusinessClasses();
+            services.ConfigureDependencyInjection();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
